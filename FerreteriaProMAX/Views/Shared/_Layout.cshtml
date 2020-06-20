@@ -19,15 +19,16 @@
 <body>
 
     @Html.Partial("_LoginPartial")
-    @if (!Session["id"].ToString().Equals("0"))
+    @if (Session["id"] == null)
+    {
+        @RenderBody()
+    }
+    else if (!Session["id"].ToString().Equals("0"))
     {
         <div id="page-wrapper">
-
             @RenderBody()
-
-
             <footer>
-                <p>&copy; @DateTime.Now.Year - Ferreteria ProMAX</p>
+                <p> &copy; @DateTime.Now.Year - Ferreteria ProMAX </p>
             </footer>
         </div>
     }

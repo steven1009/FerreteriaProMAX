@@ -122,23 +122,20 @@ namespace FerreteriaProMAX.Controllers
             return RedirectToAction("Index");
         }
         [AllowAnonymous]
-        public ActionResult Login(string returnUrl)
+        public ActionResult Login()
         {
             if (Session["id"] == null)
             {
                 Session["id"] = "0";
-                ViewBag.ReturnUrl = returnUrl;
                 return View();
             }
-            else if (!Session["id"].ToString().Equals("0"))
+            else if(!Session["id"].ToString().Equals("0"))
             {
-                ViewBag.ReturnUrl = returnUrl;
                 return RedirectToAction("Index", "Home");
             }
             else
             {
-                ViewBag.ReturnUrl = returnUrl;
-                return RedirectToAction("Login", "Usuario_login");
+                return View();
             }
         }
 
@@ -147,7 +144,7 @@ namespace FerreteriaProMAX.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public ActionResult Login(String usuario, String contraseña, string returnUrl)
+        public ActionResult Login(String usuario, String contraseña)
         {
             if (usuario.IsNullOrWhiteSpace() | contraseña.IsNullOrWhiteSpace())
             {
@@ -172,15 +169,14 @@ namespace FerreteriaProMAX.Controllers
             switch (result)
             {
                 case true:
-                    returnUrl = uSUARIO_LOGIN.idPersona.ToString();
                     PubsConn.Close();
-                    return RedirectToAction("Index", "Home", new { ReturnUrl = returnUrl });
+                    return RedirectToAction("Index", "Home");
                 case false:
                     PubsConn.Close();
-                    return View("Login", "USUARIO_LOGIN", new { ReturnUrl = returnUrl });
+                    return View("Login", "USUARIO_LOGIN");
                 default:
                     PubsConn.Close();
-                    return View(uSUARIO_LOGIN);
+                    return View();
             }
 
 

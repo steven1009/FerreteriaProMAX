@@ -13,26 +13,30 @@ namespace FerreteriaProMAX
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-           
             routes.MapRoute(
-                           name: "Default",
-                           url: "{controller}/{action}/{id}",
-                           defaults: new { controller = "USUARIO_LOGIN", action = "Login", id = UrlParameter.Optional }
-                       );
+                name: "Default",
+                url: "{controller}/{action}/{id}",
+                defaults: new { controller = "USUARIO_LOGIN", action = "Login", id = UrlParameter.Optional }
+            );
+            routes.MapRoute(
+                 name: "Login",
+                 url: "{controller}/{action}/{id}",
+                 defaults: new { controller = "USUARIO_LOGIN", action = "Login", id = UrlParameter.Optional }
+             );
             routes.MapRoute(
                 name: "Cargos",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Cargo", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Cargoes", action = "Index", id = UrlParameter.Optional }
             );
             routes.MapRoute(
                 name: "CargosAdd",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Cargo", action = "Crete", id = UrlParameter.Optional }
+                defaults: new { controller = "Cargoes", action = "Crete", id = UrlParameter.Optional }
             );
             routes.MapRoute(
                 name: "Categoria",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Categoria", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Categorias", action = "Index", id = UrlParameter.Optional }
             );
             routes.MapRoute(
                 name: "CategoriaAdd",
@@ -42,42 +46,42 @@ namespace FerreteriaProMAX
             routes.MapRoute(
                 name: "Empleado",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Empleado", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Empleadoes", action = "Index", id = UrlParameter.Optional }
             );
             routes.MapRoute(
                 name: "EmpleadoAdd",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Empleado", action = "Create", id = UrlParameter.Optional }
+                defaults: new { controller = "Empleadoes", action = "Create", id = UrlParameter.Optional }
             );
             routes.MapRoute(
                 name: "Facturas",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Factura", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Facturas", action = "Index", id = UrlParameter.Optional }
             );
             routes.MapRoute(
                 name: "FacturasAdd",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Factura", action = "Create", id = UrlParameter.Optional }
+                defaults: new { controller = "Facturas", action = "Create", id = UrlParameter.Optional }
             );
             routes.MapRoute(
                 name: "Marcas",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Marca", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Marcas", action = "Index", id = UrlParameter.Optional }
             );
             routes.MapRoute(
                 name: "MarcasAdd",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Marca", action = "Create", id = UrlParameter.Optional }
+                defaults: new { controller = "Marcas", action = "Create", id = UrlParameter.Optional }
             );
             routes.MapRoute(
                 name: "Personas",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Persona", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Personas", action = "Index", id = UrlParameter.Optional }
             );
             routes.MapRoute(
                 name: "PersonasAdd",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Persona", action = "Create", id = UrlParameter.Optional }
+                defaults: new { controller = "Personas", action = "Create", id = UrlParameter.Optional }
             );
             routes.MapRoute(
                 name: "Proveedores",
@@ -92,7 +96,7 @@ namespace FerreteriaProMAX
             routes.MapRoute(
                 name: "Producto",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Producto", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Productoes", action = "Index", id = UrlParameter.Optional }
             );
             routes.MapRoute(
                 name: "ProductoAdd",
@@ -122,7 +126,7 @@ namespace FerreteriaProMAX
             routes.MapRoute(
                 name: "Usuario_Login",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "USUARIO_LOGIN", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Usuario_Login", action = "Index", id = UrlParameter.Optional }
             );
             routes.MapRoute(
                 name: "Ventas",

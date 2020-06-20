@@ -1,4 +1,8 @@
-﻿@if (!Session["id"].ToString().Equals("0"))
+﻿@if(Session["id"]==null)
+{
+
+
+} else if(!Session["id"].ToString().Equals("0"))
 {
     <div id="wrapper">
         <nav class="navbar navbar-inverse navbar-static-top" role="navigation" style="margin-bottom: 0;padding:2px">
@@ -51,7 +55,7 @@
                                 <a href='@(Url.Action("Index", "Ventas"))'><i class="fa fa-archive fa-fw" style="color:#EABE3F"></i>Buscar Venta</a>
                             </li>
                             <li>
-                                <a href='@(Url.Action("Create", "Ventas"))'><i class="fa fa-shopping-cart fa-fw" style="color:#EABE3F"></i>Realizar Venta</a>
+                                <a href='@(Url.Action("Create", "Ventas"))'><i class="fa fa-shopping-cart fa-fw" style="color:#EABE3F"></i>Nueva Venta</a>
                             </li>
                             <li>
                                 <a href='@(Url.Action("Index", "Detalleventas"))'><i class="fa fa-info-circle fa-fw" style="color:#EABE3F"></i>Detalles de Venta</a>
@@ -93,6 +97,9 @@
 
 
     </div>
+
+}else
+{
 
 }
 

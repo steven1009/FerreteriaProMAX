@@ -7,11 +7,12 @@ body {
   background-color: #f8f8f8;
 }
 #wrapper {
+    height:100%;
   width: 100%;
 }
 #page-wrapper {
   padding: 15px 15px;
-  min-height: 568px;
+  min-height: 100%;
   background-color: #fff;
 }
 #Logint-Personalizado {
@@ -23,7 +24,7 @@ body {
 @media (min-width: 768px) {
   #page-wrapper {
     position: inherit;
-    margin: 0 0 0 250px;
+    margin: 0 0 0 ;
     padding: 20px 30px;
     border-left: 1px solid #e7e7e7;
   }
